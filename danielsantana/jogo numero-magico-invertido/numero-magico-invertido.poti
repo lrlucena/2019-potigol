@@ -1,0 +1,20 @@
+escreva "Jogo Número Mágico Invertido"
+escreva "Nesse jogo, eu vou tentar adivinhar o número que você escolher"
+
+escreva "Primeiro, qual o seu nome?"
+nome_jogador = leia_texto
+
+escreva "Certo, {nome_jogador} qual número entre 1 e 10 você vai escolher?"
+numero_jogador = leia_inteiro
+
+escreva "Agora, vou tentar adivinhar o seu número"
+numero_computador = aleatório(1,10)
+
+escreva "Acho que seu número foi {numero_computador}."
+
+se numero_jogador == numero_computador então
+  escreva "Eu acertei o seu número, eu ganhei um biscoito!"
+senão
+  escreva "Eu errei o seu número :(, então você ganhou um biscoito!"
+
+fim
