@@ -1,0 +1,89 @@
+escreva "Nesse jogo, você tem que descobrir os caracteres mágicos de acordo com os números da tabela ASCII"
+escreva "Mas antes, qual o seu nome?"
+nome_jogador = leia_texto
+
+escreva "Certo, {nome_jogador} vamos começar o jogo, eu digo os números da tabela ASCII, e você tenta adivinhar quais as letras do alfabeto que eles representam"
+
+numero_1 = aleatório(65,69)  #PRIMEIRO NÚMERO
+numero_2 = aleatório(70,73)  #SEGUNDO NÚMERO
+numero_3 = aleatório(74,77)  #TERCEIRO NÚMERO
+numero_4 = aleatório(78,81)  #QUARTO NÚMERO
+numero_5 = aleatório(82,85)  #QUINTO NÚMERO
+numero_6 = aleatório(86,90)  #SEXTO NÚMERO
+
+var acertos = 0
+
+enquanto acertos < 6 faça
+	escreva "Quais letras (escreva em letra maiúscula, uma letra por vez, na ordem) de A a Z representam, respectivamente, os números:
+            {numero_1}     -       ?
+            {numero_2}     -       ?
+            {numero_3}     -       ?
+            {numero_4}     -       ?
+            {numero_5}     -       ?
+            {numero_6}     -       ?"
+
+letra_1 =  "{numero_1.caractere}"
+letra_2 =  "{numero_2.caractere}"
+letra_3 =  "{numero_3.caractere}"
+letra_4 =  "{numero_4.caractere}"
+letra_5 =  "{numero_5.caractere}"
+letra_6 =  "{numero_6.caractere}"
+
+
+	letra_jogador_1 = leia_texto
+  se letra_jogador_1 == letra_1 então
+	  escreva "Você acertou a primeira letra! Realmente a letra {letra_jogador_1} corresponde ao número {numero_1} na tabela ASCII! Parabéns!"
+	  acertos := acertos + 1
+  senãose letra_jogador_1 <> letra_1 então
+      escreva "Você errou a primeira letra! A letra {letra_jogador_1} não corresponde ao número {numero_1} na tabela ASCII!"
+  fim
+
+  letra_jogador_2 = leia_texto
+  se letra_jogador_2 == letra_2 então
+	  escreva "Você acertou a segunda letra! Realmente a letra {letra_jogador_2} corresponde ao número {numero_2} na tabela ASCII! Parabéns!"
+    acertos := acertos + 1
+  senãose letra_jogador_2 <> letra_2 então
+    escreva "Você errou a segunda letra! A letra {letra_jogador_2} não corresponde ao número {numero_2} na tabela ASCII!"
+  fim
+
+  letra_jogador_3 = leia_texto
+  se letra_jogador_3 == letra_3 então
+	  escreva "Você acertou a terceira letra! Realmente a letra {letra_jogador_3} corresponde ao número {numero_3} na tabela ASCII! Parabéns!"
+    acertos := acertos + 1
+  senãose letra_jogador_3 <> letra_3 então
+    escreva "Você errou a terceira letra! A letra {letra_jogador_3} não corresponde ao número {numero_3} na tabela ASCII!"
+  fim
+
+  letra_jogador_4 = leia_texto
+  se letra_jogador_4 == letra_4 então
+	  escreva "Você acertou a quarta letra! Realmente a letra {letra_jogador_4} corresponde ao número {numero_4} na tabela ASCII! Parabéns!"
+    acertos := acertos + 1
+  senãose letra_jogador_4 <> letra_4  então
+    escreva "Você errou a quarta letra! A letra {letra_jogador_4} não corresponde ao número {numero_4} na tabela ASCII!"
+  fim
+
+  letra_jogador_5 = leia_texto
+  se letra_jogador_5 == letra_5 então
+    escreva "Você acertou a quinta letra! Realmente a letra {letra_jogador_5} corresponde ao número {numero_5} na tabela ASCII! Parabéns!"
+    acertos := acertos + 1
+  senãose letra_jogador_5 <> letra_5  então
+    escreva "Você errou a quinta letra! A letra {letra_jogador_5} não corresponde ao número {numero_5} na tabela ASCII!"
+  fim
+
+  letra_jogador_6 = leia_texto
+  se letra_jogador_6 == letra_6 então
+	  escreva "Você acertou a sexta letra! Realmente a letra {letra_jogador_6} corresponde ao número {numero_6} na tabela ASCII! Parabéns!"
+    acertos := acertos + 1
+  senãose letra_jogador_6 <> letra_6  então
+      escreva "Você errou a sexta letra! A letra {letra_jogador_6} não corresponde ao número {numero_6} na tabela ASCII!"
+  fim
+
+  quanto_falta = 6 - acertos
+  se acertos < 6 então
+    escreva "Até agora, você teve somente {acertos} acertos! Você tem que acertar pelo menos, mais {quanto_falta} letra(s) para ganhar !"
+  fim
+fim
+
+se acertos >= 6 então
+  escreva "Você acertou, pelo menos, 6 letras no total de suas tentativas! Parabéns, você ganhou o jogo!"
+fim
