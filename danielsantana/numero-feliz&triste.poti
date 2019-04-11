@@ -1,0 +1,31 @@
+escreva "olá, escreva um numero natural diferente de zero (este programa só funciona com números até 9.999.999.999.995)."
+    numero_jogador = leia_texto
+
+lista = numero_jogador.lista.mapeie(_.inteiro - '0')
+var novalista = lista
+var i = 0
+
+enquanto novalista <> [1] e i < 50 faça
+
+  se novalista.tamanho == 3 então
+    novalista := (novalista[1] * novalista[1] + novalista[2] * novalista[2] + novalista[3] * novalista[3]).texto.lista.mapeie(_.inteiro - '0')
+    i := i + 1
+  senãose novalista.tamanho == 2 então
+    novalista := (novalista[1] * novalista[1] + novalista[2] * novalista[2]).texto.lista.mapeie(_.inteiro - '0')
+    i := i + 1
+  senãose novalista.tamanho == 1 então
+    novalista := (novalista[1] * novalista[1]).texto.lista.mapeie(_.inteiro - '0')
+    i := i + 1
+  fim
+
+  se novalista == [1] então
+      escreva "Esse número é feliz!"
+  fim
+
+fim
+
+  se lista == [1] então
+    escreva "Esse número é feliz!"
+  senãose novalista <> [1] então
+    escreva "Esse número é triste!"
+  fim
