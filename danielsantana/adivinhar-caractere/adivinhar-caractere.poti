@@ -79,7 +79,7 @@ letra_6 =  "{numero_6.caractere}"
       escreva "Você errou a sexta letra! A letra {letra_jogador_6} não corresponde ao número {numero_6} na tabela ASCII!"
   fim
 
-  quanto_falta = 6 - acertos
+  var quanto_falta = 6 - acertos
   se acertos < 6 então
     escreva "Até agora, você teve somente {acertos} acertos! Você tem que acertar pelo menos, mais {quanto_falta} letra(s) para ganhar !"
   fim
