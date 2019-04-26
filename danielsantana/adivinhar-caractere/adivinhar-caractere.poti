@@ -4,6 +4,10 @@ nome_jogador = leia_texto
 
 escreva "Certo, {nome_jogador} vamos começar o jogo, eu digo os números da tabela ASCII, e você tenta adivinhar quais as letras do alfabeto que eles representam"
 
+var acertos = 0
+
+enquanto acertos < 6 faça
+
 numero_1 = aleatório(65,69)  #PRIMEIRO NÚMERO
 numero_2 = aleatório(70,73)  #SEGUNDO NÚMERO
 numero_3 = aleatório(74,77)  #TERCEIRO NÚMERO
@@ -11,9 +15,6 @@ numero_4 = aleatório(78,81)  #QUARTO NÚMERO
 numero_5 = aleatório(82,85)  #QUINTO NÚMERO
 numero_6 = aleatório(86,90)  #SEXTO NÚMERO
 
-var acertos = 0
-
-enquanto acertos < 6 faça
 	escreva "Quais letras (escreva em letra maiúscula, uma letra por vez, na ordem) de A a Z representam, respectivamente, os números:
             {numero_1}     -       ?
             {numero_2}     -       ?
