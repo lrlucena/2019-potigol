@@ -1,0 +1,113 @@
+escreva "Informe o dia atual"
+data_atual_dia = leia_inteiro
+escreva "Informe o mês atual"
+data_atual_mês = leia_inteiro
+escreva "Informe o ano atual"
+data_atual_ano = leia_inteiro
+
+escreva "Informe o dia do seu nascimento"
+data_nascimento_dia = leia_inteiro
+escreva "Informe o mês do seu nascimento"
+data_nascimento_mês = leia_inteiro
+escreva "Informe o ano do seu nascimento"
+data_nascimento_ano = leia_inteiro
+
+se data_atual_ano >= data_nascimento_ano e data_nascimento_dia <= 31 e data_nascimento_mês <= 12 e data_atual_dia <= 31 e data_atual_mês <= 12 então
+var número_dos_meses := 0
+    se (data_atual_mês - data_nascimento_mês) < 0 então
+        número_dos_meses := data_nascimento_mês - 1
+    senãose (data_atual_mês - data_nascimento_mês) > 0 então
+        número_dos_meses := data_nascimento_mês
+    fim
+
+var contador_meses := (data_atual_mês - data_nascimento_mês).abs
+var contador_anos := data_nascimento_ano + 1
+var dias_dos_meses := 0
+var dias_dos_anos := 365
+var idade_em_dias_anos := 0
+var idade_em_dias_meses := 0
+var idade_em_dias_total := 0
+var bissexto_anos := 0
+var bissexto_meses := 0
+
+    enquanto contador_anos <= data_atual_ano faça
+      dias_dos_anos := 365
+      bissexto_anos := 0
+
+      se contador_anos.real mod 4 == 0 e contador_anos.real mod 100 <> 0 então
+          dias_dos_anos := 366
+          bissexto_anos := 1
+      senãose contador_anos.real mod 400 == 0 então
+          dias_dos_anos := 366
+          bissexto_anos := 1
+      fim
+              idade_em_dias_anos := idade_em_dias_anos + dias_dos_anos
+              contador_anos := contador_anos + 1
+    fim
+
+    enquanto contador_meses <> 0 faça
+      bissexto_meses := 0
+      se data_atual_ano.real mod 4 == 0 e data_atual_ano.real mod 100 <> 0 então
+          bissexto_meses := 1
+      senãose data_atual_ano.real mod 400 == 0 então
+          bissexto_meses := 1
+      fim
+            se bissexto_meses == 0 então
+                   escolha número_dos_meses
+                       caso 11 => dias_dos_meses := 30
+                       caso 10 => dias_dos_meses := 31
+                       caso 9 => dias_dos_meses := 30
+                       caso 8 => dias_dos_meses := 31
+                       caso 7 => dias_dos_meses := 31
+                       caso 6 => dias_dos_meses := 30
+                       caso 5 => dias_dos_meses := 31
+                       caso 4 => dias_dos_meses := 30
+                       caso 3 => dias_dos_meses := 31
+                       caso 2 => dias_dos_meses := 28
+                       caso 1 => dias_dos_meses := 31
+                   fim
+            senãose bissexto_meses == 1 então
+                   escolha número_dos_meses
+                       caso 11 => dias_dos_meses := 30
+                       caso 10 => dias_dos_meses := 31
+                       caso 9 => dias_dos_meses := 30
+                       caso 8 => dias_dos_meses := 31
+                       caso 7 => dias_dos_meses := 31
+                       caso 6 => dias_dos_meses := 30
+                       caso 5 => dias_dos_meses := 31
+                       caso 4 => dias_dos_meses := 30
+                       caso 3 => dias_dos_meses := 31
+                       caso 2 => dias_dos_meses := 29
+                       caso 1 => dias_dos_meses := 31
+                   fim
+            fim
+                  contador_meses := contador_meses - 1
+
+              se (data_atual_mês - data_nascimento_mês) < 0 então
+                número_dos_meses := número_dos_meses - 1
+              senãose (data_atual_mês - data_nascimento_mês) > 0 então
+                número_dos_meses := número_dos_meses + 1
+              fim
+
+                  idade_em_dias_meses := idade_em_dias_meses + dias_dos_meses
+    fim
+
+
+  se (data_atual_mês - data_nascimento_mês) < 0 então
+      idade_em_dias_total := idade_em_dias_anos - idade_em_dias_meses - data_nascimento_dia + data_atual_dia
+  senãose (data_atual_mês - data_nascimento_mês) > 0 então
+      idade_em_dias_total := idade_em_dias_anos + idade_em_dias_meses - data_nascimento_dia + data_atual_dia
+  senãose (data_atual_mês - data_nascimento_mês) == 0 então
+    idade_em_dias_meses := 0
+    idade_em_dias_total := idade_em_dias_anos + idade_em_dias_meses - data_nascimento_dia + data_atual_dia
+  fim
+
+    escreva "Até o dia de hoje, você tem, {idade_em_dias_total} dias de vida"
+
+  senãose data_atual_ano < data_nascimento_ano então
+    escreva "Ainda não calculamos a data de viajantes no tempo!!"
+  senãose data_atual_dia > 31 ou data_nascimento_dia > 31 então
+    escreva "Você colocou um valor inválido para o número do dia!!"
+  senãose data_atual_mês > 12 ou data_nascimento_mês > 12 então
+    escreva "Você colocou um valor inválido para o número do mês!!"
+  fim
